@@ -1,0 +1,48 @@
+<script>
+	export default {
+		onLaunch: function() {
+			console.log('App Launch')
+      uni.getSetting({
+        success: (res) => {
+          // console.log('res: ',res)
+          console.log('res.authSetting: ',res.authSetting)
+          if(res.authSetting['scope.userInfo']) {
+             // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+             uni.getUserInfo({
+               success: (res) => {
+                 // 可以将 res 发送给后台解码出 unionId
+                 console.log("app.js:", res.userInfo)
+                 this.globalData.userInfo = res.userInfo
+                 this.globalData.login = false
+                 // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+                 // 所以此处加入 callback 以防止这种情况
+                 if (this.userInfoReadyCallback) {
+                   this.userInfoReadyCallback(res)
+                 }
+               }
+             })
+          }
+        },
+        fail: (err) => {
+          console.log(err)
+        }
+      })
+		},
+		onShow: function() {
+			console.log('App Show')
+		},
+		onHide: function() {
+			console.log('App Hide')
+		},
+    globalData: {
+      userInfo: null,
+      login: true
+    }
+	}
+</script>
+
+<style>
+@import './style/icons.wxss';
+@import './style/common.wxss';
+@import './style/color.wxss';
+</style>
