@@ -1,5 +1,5 @@
 <template>
-	<view class="search marginTopBottom" @click="goToSearch">
+	<view class="search marginTopBottom" @tap="goToSearch">
 		<view class="search-left">
 			<text class="icon-search"></text>
 			<input placeholder="搜索你想听的节目" :disabled="disabled"></input>

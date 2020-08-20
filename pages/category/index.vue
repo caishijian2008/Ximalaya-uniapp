@@ -8,7 +8,7 @@
         <!-- 左边部分 -->
         <scroll-view class="hmly-scroll-left" scroll-y scroll-with-animation :style="{height:phoneHeight + 'rpx'}" :scroll-top="VerticalNavTop">
             <block v-for="(item, index) in ificationTitle" :key="index">
-                <view :class="['hmly-left-title', index === activeIndex ? 'hmly-active':'']" :data-index="index" :data-id="index" @click="changeIt">{{item.title}}</view>
+                <view :class="['hmly-left-title', index === activeIndex ? 'hmly-active':'']" :data-index="index" :data-id="index" @tap="changeIt">{{item.title}}</view>
             </block>
         </scroll-view>
         

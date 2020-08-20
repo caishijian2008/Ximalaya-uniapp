@@ -9,11 +9,11 @@
 			<view class="hmly-login-button">
 				<!-- 在本小程序中只实现了微信登录 -->
 				<view class="hmly-wechat-login">
-					<button open-type="getUserInfo" @click="bindGetUserInfo">
+					<button open-type="getUserInfo" @tap="bindGetUserInfo">
 						<text class="icon-message"></text> 微信登录
 					</button>
 				</view>
-				<view class="hmly-phone-login" @click="phoneLogin">
+				<view class="hmly-phone-login" @tap="phoneLogin">
 					<button>手机号登录</button>
 				</view>
 			</view>
@@ -52,7 +52,7 @@
     		<!-- 选项卡部分 -->
     		<view class="hmly-chioce">
     			<!-- 选项卡item -->
-    			<view class="hmly-choice-item" @click="openSwitch">
+    			<view class="hmly-choice-item" @tap="openSwitch">
     				<view class="">
     					<text class="icon-time text-gray"></text>
     					<text style="margin-left:20rpx">定时关闭</text>
@@ -80,7 +80,7 @@
     				</view>
     				<text class="icon-right text-gray"></text>
     			</view>
-    			<view class="hmly-choice-item" @click="gotoLogin">
+    			<view class="hmly-choice-item" @tap="gotoLogin">
     				<view class="">
     					<text class="icon-changeCount text-gray"></text>
     					<text style="margin-left:20rpx">切换账号</text>
@@ -95,12 +95,12 @@
     <block v-if="show">
     	<view class="hmly-switch">
     		<scroll-view class="hmly-scroll-wrapper" scroll-y scroll-with-animation="true" catchtouchmove="preventTouchMove">
-    			<view class="hmly-switch-item" v-for="(item, index) in timeout" :key="index" @click="chooseTimeOut" :data-activeIndex="index">
+    			<view class="hmly-switch-item" v-for="(item, index) in timeout" :key="index" @tap="chooseTimeOut" :data-activeIndex="index">
     				<view>{{item.text}}</view>
     				<view class="hmly-active" v-if="index == activeIndex"></view>
     			</view>
     		</scroll-view>
-    		<view class="hmly-close" @click="close">关闭</view>
+    		<view class="hmly-close" @tap="close">关闭</view>
     	</view>
     	<view class="hmly-cover"></view>
     </block>

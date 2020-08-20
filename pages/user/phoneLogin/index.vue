@@ -21,7 +21,7 @@
 		                    <input type="number" placeholder="输入验证码" placeholder-class="hmly-place"></input>
 		                    <view class="hmly-get-code">获取验证码</view>
 		                </view>
-		                <view class="hmly-submit" @click="login">
+		                <view class="hmly-submit" @tap="login">
 		                    <button><text class="icon-wechat"></text> 立即登录</button>
 		                </view>
 		            </form>

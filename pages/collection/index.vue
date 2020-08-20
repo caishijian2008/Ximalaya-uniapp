@@ -9,7 +9,7 @@
       <!-- 登录按钮 -->
       <view class="hmly-login-button" hover-class="none" hover-stop-propagation="false">
         <view class="hmly-wechat-login">
-          <button open-type="getUserInfo" @click="bindGetUserInfo">
+          <button open-type="getUserInfo" @tap="bindGetUserInfo">
             <text class="icon-message"></text> 微信登录
           </button>
         </view>
@@ -24,7 +24,7 @@
       <!-- 功能栏 -->
       <view class="hmly-title-bar">
         <view :class="['hmly-item-title', index == currentIndex ? 'hmly-active' : '']" :data-index="index" 
-          @click="checkItem"
+          @tap="checkItem"
           v-for="(item, index) in content" :key="index">
           {{item.text}}
         </view>

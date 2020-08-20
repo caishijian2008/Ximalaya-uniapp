@@ -41,7 +41,7 @@
       </view>
       <!-- 这没有没有使用数据绑定，因为是练手而且数据比较少 -->
       <view class="hmly-like-item-box">
-        <view class="hmly-like-item" @click="gotoDetails" :data-coverImg="item.coverMiddle" :data-title="item.intro" v-for="(item, index) in guess" :key="index">
+        <view class="hmly-like-item" @tap="gotoDetails" :data-coverImg="item.coverMiddle" :data-title="item.intro" v-for="(item, index) in guess" :key="index">
           <view class="hmly-like-img">
             <image class="hmly-like-item-icon" :src="item.coverMiddle" mode="widthFix"></image>
             <view class="hmly-like-cover">
@@ -63,7 +63,7 @@
           <view class="hmly-title-right">查看全部<text class="icon-right"></text></view>
         </view>
         <block v-for="(item, index) in xiaoshuocontent" :key="index">
-          <view class="hmly-content" @click="gotoDetails" :data-coverImg="item.albumCoverUrl290" :data-title="item.title">
+          <view class="hmly-content" @tap="gotoDetails" :data-coverImg="item.albumCoverUrl290" :data-title="item.title">
             <view class="hmly-content-img">
               <image :src="item.albumCoverUrl290" mode="widthFix"></image>
             </view>
@@ -90,7 +90,7 @@
           <view class="hmly-title-right">查看全部<text class="icon-right"></text></view>
         </view>
         <block v-for="(item, index) in xiangshengcontent" :key="index">
-          <view class="hmly-content" @click="gotoDetails" :data-coverImg="item.albumCoverUrl290" data-title="item.title">
+          <view class="hmly-content" @tap="gotoDetails" :data-coverImg="item.albumCoverUrl290" data-title="item.title">
             <view class="hmly-content-img">
               <image :src="item.albumCoverUrl290" mode="widthFix"></image>
             </view>
@@ -117,7 +117,7 @@
           <view class="hmly-title-right">查看全部<text class="icon-right"></text></view>
         </view>
         <block v-for="(item, index) in tuokocontent" :key="index">
-          <view class="hmly-content" @click="gotoDetails" :data-coverImg="item.albumCoverUrl290" :data-title="item.title">
+          <view class="hmly-content" @tap="gotoDetails" :data-coverImg="item.albumCoverUrl290" :data-title="item.title">
             <view class="hmly-content-img">
               <image :src="item.albumCoverUrl290" mode="widthFix" lazy-load="false"></image>
             </view>
